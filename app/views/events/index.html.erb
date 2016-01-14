@@ -1,0 +1,10 @@
+<h1>EVENT VIEWER</h1>
+<p>(RoR version)</p>
+
+<%= @events.each do |event| %>
+	<br>
+	<h3><%= event.title %></h3>
+	<h4>At: <%= event.venue %></h4>
+	<h4><%= event.time %></h4>
+	<p><%= event.desc %></p>
+<% end %>
