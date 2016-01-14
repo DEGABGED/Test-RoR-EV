@@ -11,16 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114124850) do
+ActiveRecord::Schema.define(version: 20160114134330) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.string   "venue"
     t.datetime "time"
     t.text     "desc"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.datetime "time_end"
+    t.string   "pubmat_file_name"
+    t.string   "pubmat_content_type"
+    t.integer  "pubmat_file_size"
+    t.datetime "pubmat_updated_at"
   end
 
 end

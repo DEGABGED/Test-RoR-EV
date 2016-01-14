@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # HTML Abstraction Markup Language
 # gem 'haml'
 # Paperclip (4.2?) (For image handling)
-# gem 'paperclip', git: "git://github.com/thoughtbot/paperclip.git"
+gem 'paperclip', git: "git://github.com/thoughtbot/paperclip.git"
 # SimpleForm (For form handling)
 gem 'simple_form'
 # Devise (For authentication)
