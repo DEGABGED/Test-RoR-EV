@@ -1,0 +1,10 @@
+<%= simple_form_for @event do |e| %>
+  <%= e.input :title %>
+  <%= e.input :pubmat%>
+  <%= e.input :venue %>
+  <%= e.input :time %>
+  <%= e.input :time_end %>
+  <br>
+  <%= e.input :desc %>
+  <%= e.button :submit %>
+<% end %>

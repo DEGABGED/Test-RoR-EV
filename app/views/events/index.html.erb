@@ -3,11 +3,10 @@
 
 <% @events.each do |event| %>
 	<br>
-	<h3><%= event.title %></h3>
+	<h3><%= link_to(event.title, event) %></h3>
 	<% if event.pubmat.exists? %>
-		<%= image_tag event.pubmat %>
+		<%= image_tag event.pubmat.url(:thumb) %>
 	<% end %>
 	<h4><%= event.venue %></h4>
-	<h4><%= event.time %></h4>
-	<p><%= event.desc %></p>
+	<h4><%= event.time.strftime("Starts %b %e, %l:%M %p") %></h4>
 <% end %>

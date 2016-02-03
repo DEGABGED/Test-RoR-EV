@@ -1,0 +1,17 @@
+<div>
+		<h2><%= @event.title %></h2>
+</div>
+<div>
+	<h4>At: <%= @event.venue %></h4>
+	<h4>From <%= @event.time.strftime("%b %e, %l:%M %p") %> to <%= @event.time_end.strftime("%b %e, %l:%M %p") %></h4>
+</div>
+
+<div>
+	<% if @event.pubmat.exists? %>
+		<%= image_tag @event.pubmat.url(:medium) %>
+	<% end %>
+</div>
+<div>
+	<p><%= @event.desc %></p>
+	<%= link_to("Delete Event", event_path(@event), method: :delete, data: {confirm: "Are you sure? This cannot be reversed."}) %>
+</div>
