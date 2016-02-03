@@ -10,6 +10,7 @@ class EventsController < ApplicationController
 
 	def new
 		@event = Event.new
+		@groups = Group.all
 	end
 
 	def edit

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114134330) do
+ActiveRecord::Schema.define(version: 20160203070654) do
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20160114134330) do
     t.string   "pubmat_content_type"
     t.integer  "pubmat_file_size"
     t.datetime "pubmat_updated_at"
+    t.integer  "group_id"
+  end
+
+  add_index "events", ["group_id"], name: "index_events_on_group_id"
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.text     "desc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
