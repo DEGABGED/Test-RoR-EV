@@ -1,4 +1,4 @@
-<%= simple_form_for @event do |e| %>
+<%= simple_form_for [@group, @group.events.build] do |e| %>
   <%= e.input :title %>
   <%= e.input :pubmat%>
   <%= e.input :venue %>

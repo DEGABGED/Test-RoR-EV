@@ -1,5 +1,5 @@
 <% @events.each do |event| %>
-	<h3><%= link_to(event.title, event) %></h3>
+	<h3><%= link_to(event.title, group_event_path(@group, event)) %></h3>
 	<% if event.pubmat.exists? %>
 		<%= image_tag event.pubmat.url(:thumb) %>
 	<% end %>
@@ -7,3 +7,5 @@
 	<h4><%= event.time.strftime("Starts %b %e, %l:%M %p") %></h4>
 	<br>
 <% end %>
+
+<%= link_to("New Event", new_group_event_path(@group)) %>

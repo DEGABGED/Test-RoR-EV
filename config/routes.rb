@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+  resources :groups do
+    resources :events
+  end
+  root "groups#index"
+
+=begin
   resources :groups
   resources :events
   root "events#index"
+=end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

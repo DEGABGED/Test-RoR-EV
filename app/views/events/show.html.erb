@@ -13,5 +13,5 @@
 </div>
 <div>
 	<p><%= @event.desc %></p>
-	<%= link_to("Delete Event", event_path(@event), method: :delete, data: {confirm: "Are you sure? This cannot be reversed."}) %>
+	<%= link_to("Delete Event", group_event_path(@group, @event), method: :delete, data: {confirm: "Are you sure? This cannot be reversed."}) %>
 </div>
