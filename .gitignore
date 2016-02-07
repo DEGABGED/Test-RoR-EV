@@ -15,3 +15,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore the swap files
+*.swp
+
+# Ignore the pubmats
+/public/system/events/pubmats/*
