@@ -1,3 +1,7 @@
+<%= link_to("New Event", new_group_event_path(@group)) %>
+|
+<%= link_to("Back", groups_path) %>
+
 <% @events.each do |event| %>
 	<h3><%= link_to(event.title, group_event_path(@group, event)) %></h3>
 	<% if event.pubmat.exists? %>
@@ -8,4 +12,3 @@
 	<br>
 <% end %>
 
-<%= link_to("New Event", new_group_event_path(@group)) %>
