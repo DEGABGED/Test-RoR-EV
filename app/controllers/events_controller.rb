@@ -1,13 +1,19 @@
 class EventsController < ApplicationController
 	before_action :set_group
+
 	def index
 		@events = @group.events.all
 	end
 
 	def create
 		@event = @group.events.build(event_params)
-		@event.save
-		redirect_to group_events_path(@group)
+		if @event.save
+			flash[:success] = "Event created!"
+			redirect_to group_events_path(@group)
+		else
+			flash.now[:alert] = "ERROR: Something wrong happened. Try again!"
+			render :new
+		end
 	end
 
 	def new
@@ -24,8 +30,13 @@ class EventsController < ApplicationController
 
 	def update
 		@event = Event.find(params[:id])
-		@event.update(event_params)
-		redirect_to group_event_path(@group, @event)
+		if @event.update(event_params)
+			flash[:success] = "Event updated!"
+			redirect_to group_event_path(@group, @event)
+		else
+			flash.now[:alert] = "ERROR: Something went wrong. Try again!"
+			render :edit
+		end
 	end
 
 	def destroy

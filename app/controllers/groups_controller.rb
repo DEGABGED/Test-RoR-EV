@@ -4,8 +4,13 @@ class GroupsController < ApplicationController
     end
 
     def create
-        @group = Group.create(group_params)
-        redirect_to groups_path
+        if @group = Group.create(group_params)
+		flash[:success] = "Success! Group was made."
+	        redirect_to groups_path
+	else 
+		flash.now[:alert] = "ERROR: Something went wrong! Try again"
+		render :new
+	end
     end
 
     def new

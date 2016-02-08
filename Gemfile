@@ -31,7 +31,7 @@ gem 'paperclip', git: "git://github.com/thoughtbot/paperclip.git"
 # SimpleForm (For form handling)
 gem 'simple_form'
 # Devise (For authentication)
-# gem 'devise'
+gem 'devise'
 # Bootstrap (SASS)
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5.1'
 
