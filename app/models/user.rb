@@ -6,4 +6,4 @@ class User < ActiveRecord::Base
   validates :user_name, presence: true, length: {minimum: 8, maximum: 16}
   has_many :memberships
   has_many :groups, through: :memberships
-and
+end

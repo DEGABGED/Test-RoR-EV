@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'registrations' }
-  resources :groups do
+  concern :members do
+    resources :memberships
+  end
+
+  resources :groups, concerns: :members do
     resources :events
   end
   root "groups#index"
 
+  devise_for :users, :controllers => { registrations: 'registrations' }
+
+  get 'profiles/show'
+
+  get ':user_name', to: 'profiles#show', as: :profile
+  get ':user_name/groups', to: 'memberships#index', as: :user_memberships
 =begin
   resources :groups
   resources :events

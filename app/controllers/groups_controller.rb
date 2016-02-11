@@ -1,16 +1,18 @@
 class GroupsController < ApplicationController
+    before_action :authenticate_user!
+
     def index
         @groups = Group.all
     end
 
     def create
         if @group = Group.create(group_params)
-		flash[:success] = "Success! Group was made."
+		    flash[:success] = "Success! Group was made."
 	        redirect_to groups_path
-	else 
-		flash.now[:alert] = "ERROR: Something went wrong! Try again"
-		render :new
-	end
+    	else 
+		    flash.now[:alert] = "ERROR: Something went wrong! Try again"
+		    render :new
+	    end
     end
 
     def new
