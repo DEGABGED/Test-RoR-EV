@@ -13,3 +13,4 @@
 # rails g devise:views
 # rails g devise User
 # rails g migration AddUserNameToUsers user_name:string
+# rails g model Membership group:references user:references
