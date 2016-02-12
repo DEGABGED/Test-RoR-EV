@@ -1,3 +1,9 @@
+<% if Membership.where(group_id: @group["id"], user_id: current_user.id).take %>
+    <%= link_to("Unfollow", groups_path) %>
+<% else %>
+    <%= link_to("Follow", groups_path) %>
+<% end %>
+|
 <%= link_to("New Event", new_group_event_path(@group)) %>
 |
 <%= link_to("Back", groups_path) %>
