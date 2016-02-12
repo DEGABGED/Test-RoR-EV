@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   root "groups#index"
 
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, :controllers => { registrations: 'registrations' , sessions: 'users/sessions' }
 
   get 'profiles/show'
 
