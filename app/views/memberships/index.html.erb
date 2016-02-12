@@ -1,0 +1,9 @@
+<% if @members %>
+<% elsif @memberships %>
+    <% @memberships.each do |mem| %>
+        <% @group = Group.find(mem["group_id"]) %>
+        <h3><%= link_to(@group.name, group_events_path(@group)) %></h3>
+	    <h4><%= @group.desc %></h4>
+        <br>
+    <% end %>
+<% end %>
