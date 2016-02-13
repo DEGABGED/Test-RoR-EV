@@ -1,7 +1,7 @@
-<% if Membership.where(group_id: @group["id"], user_id: current_user.id).take %>
-    <%= link_to("Unfollow", "memberships#destroy") %>
+<% if @membership = Membership.where(group_id: @group["id"], user_id: current_user.id).take %>
+    <%= link_to("Unfollow", group_membership_path(@group["id"], @membership["id"]), :method => :delete) %>
 <% else %>
-    <%= link_to("Follow", "memberships#create") %>
+    <%= link_to("Follow", {:controller => :memberships, :action => :create}, :method => :post) %>
 <% end %>
 |
 <%= link_to("New Event", new_group_event_path(@group)) %>
